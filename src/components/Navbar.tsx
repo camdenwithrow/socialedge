@@ -14,7 +14,7 @@ const Navbar: React.FC = () => {
   return (
     <>
       {/* Mobile Menu */}
-      <div className={`transition-transform ${openHamburger ? "translate-x-0" : "-translate-x-full"} absolute inset-0 pt-16 md:hidden bg-green-200/95`}>
+      <div className={`z-20 transition-transform ${openHamburger ? "translate-x-0" : "-translate-x-full"} absolute inset-0 pt-16 pl-8 md:hidden bg-green-200/[98%]`}>
         <nav className="m-6">
           <ul className="text-6xl text-gray-500">
             {navigation.map((nav) => (
@@ -32,7 +32,7 @@ const Navbar: React.FC = () => {
 
       {/* Nav */}
       <div className="flex justify-between items-center p-6 text-gray-700">
-        <div className="flex items-center text-xl font-bold z-10">
+        <div className="flex items-center text-xl font-bold z-30">
           <button className="mr-4 md:hidden" onClick={() => setOpenHamburger(!openHamburger)}>
             <svg
               viewBox="0 0 100 80"

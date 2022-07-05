@@ -4,6 +4,9 @@ import Link from "next/link";
 import { trpc } from "../utils/trpc";
 
 import Navbar from "../components/Navbar";
+import Hero from "../components/Hero";
+import MainSearch from "../components/MainSearch";
+
 
 const Home: NextPage = () => {
   return (
@@ -15,6 +18,8 @@ const Home: NextPage = () => {
       </Head>
       <div className="w-full h-screen">
         <Navbar />
+        <Hero />
+        <MainSearch />
       </div>
     </>
   );
