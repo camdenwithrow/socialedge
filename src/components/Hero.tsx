@@ -35,7 +35,7 @@ const Hero: React.FC<HeroProps> = (props) => {
             </svg>
           </div>
           <div className="text-sm text-gray-500">
-            <p className="text-left">Search Companies, Trends...</p>
+            <p className="text-left">Search Companies<span className="sm:hidden">...</span><span className="hidden sm:inline">, Trends...</span></p>
           </div>
           <p className="text-white absolute right-2.5 bottom-3 bg-green-600 font-medium rounded-lg text-sm px-4 py-2 dark:bg-green-600">
             Search
@@ -44,7 +44,7 @@ const Hero: React.FC<HeroProps> = (props) => {
       </div>
       <div className="w-full max-w-[575px] lg:w-[300px] xl:w-[500px] mx-auto flex lg:block">
         {cards.map((card) => (
-          <div key={card.id} className="my-4 first:mr-4 last:ml-4 lg:first:mr-0 lg:last:ml-0 p-4 w-full border rounded-lg ">
+          <div key={card.id} className="my-4 first:mr-4 last:hidden sm:last:block sm:last:ml-4 lg:first:mr-0 lg:last:ml-0 p-4 w-full border rounded-lg ">
             <div>{card.name}</div>
             <p>___/-----</p>
           </div>
