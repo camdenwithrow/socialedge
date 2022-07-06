@@ -12,7 +12,7 @@ const Hero: React.FC<HeroProps> = (props) => {
   const { onClickSearch } = props
 
   return (
-    <div className="m-12 mt-24 grid grid-rows-2 grid-cols-1 lg:grid-cols-3 xl:grid-cols-2">
+    <div className="m-12 mt-36 grid grid-rows-2 grid-cols-1 lg:grid-cols-3 xl:grid-cols-2">
       <div className="mx-auto flex flex-col justify-center items-center text-center w-full lg:col-span-2 xl:col-span-1 lg:items-start lg:text-left sm:w-[575px]">
         <h1 className="text-3xl sm:text-5xl lg:text-6xl sm:leading-tight lg:leading-tight font-semibold mb-8">
           Data to <span className="text-green-600">Jumpstart</span> Your Next Investment
