@@ -1,4 +1,5 @@
 import type { NextPage } from "next";
+import React, {useState} from "react";
 import Head from "next/head";
 import Link from "next/link";
 import { trpc } from "../utils/trpc";
@@ -9,6 +10,8 @@ import MainSearch from "../components/MainSearch";
 
 
 const Home: NextPage = () => {
+  const [openSearch, setOpenSearch] = useState(false)
+
   return (
     <>
       <Head>
@@ -18,8 +21,8 @@ const Home: NextPage = () => {
       </Head>
       <div className="w-full h-screen">
         <Navbar />
-        <Hero />
-        <MainSearch />
+        <Hero onClickSearch={() => setOpenSearch(true)}/>
+        <MainSearch openSearch={openSearch} setOpenSearch={setOpenSearch}/>
       </div>
     </>
   );

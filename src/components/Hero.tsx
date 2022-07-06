@@ -1,9 +1,15 @@
-const Hero: React.FC = () => {
+interface HeroProps {
+    onClickSearch: () => void
+}
+
+const Hero: React.FC<HeroProps> = (props) => {
   const cards = [
     { id: 1, name: "Apple" },
     { id: 2, name: "Apple" },
     { id: 3, name: "Apple" },
   ];
+
+  const { onClickSearch } = props
 
   return (
     <div className="m-12 mt-24 grid grid-rows-2 grid-cols-1 lg:grid-cols-3 xl:grid-cols-2">
@@ -11,7 +17,7 @@ const Hero: React.FC = () => {
         <h1 className="text-3xl sm:text-5xl lg:text-6xl sm:leading-tight lg:leading-tight font-semibold mb-8">
           Data to <span className="text-green-600">Jumpstart</span> Your Next Investment
         </h1>
-        <div className="relative p-5 pl-10 w-full rounded-lg border border-gray-300 cursor-text dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white">
+        <div onClick={onClickSearch} className="relative p-5 pl-10 w-full rounded-lg border border-gray-300 cursor-text dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white">
           <div className="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
             <svg
               className="w-5 h-5 text-gray-500 dark:text-gray-400"

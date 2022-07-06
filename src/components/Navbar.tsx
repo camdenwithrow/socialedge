@@ -20,7 +20,7 @@ const Navbar: React.FC = () => {
             {navigation.map((nav) => (
               <li key={nav.name} className="my-16">
                 <Link href={nav.href}>
-                  <a className="pb-1 border-gray-700 hover:border-b-2 hover:text-gray-700">
+                  <a className="pb-1 border-gray-700 hover:border-b-4 hover:text-gray-700">
                     {nav.name}
                   </a>
                 </Link>
@@ -61,10 +61,10 @@ const Navbar: React.FC = () => {
           </ul>
         </nav>
         <div className="flex items-center">
-          <Link href="#">
+          <Link href="/login">
             <a className="mr-4 p-1 border-b border-gray-400 ">Login</a>
           </Link>
-          <Link href="#">
+          <Link href="/signup">
             <a className="border p-2 rounded shadow transition hover:scale-105">
               Signup
             </a>
