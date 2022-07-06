@@ -22,7 +22,7 @@ const tiers: Array<Tier> = [
   {
     id: 0,
     name: "Hobbyist",
-    bestFor: 'The investor "on-the-side"',
+    bestFor: "The investor on-the-side",
     priceString: "Free",
     actionText: "Get Started",
     featuresText: "Hobbyist includes:",
@@ -65,21 +65,19 @@ const tiers: Array<Tier> = [
 const Pricing: NextPage = () => {
   const [checked, setChecked] = useState(false);
 
-  const savingAmount = (id: any) => {
-    const mon = tiers[id]?.priceNum?.mon;
-    const ann = tiers[id]?.priceNum?.ann;
-    const annDiff = 12 * (mon - ann);
-    console.log(annDiff)
-    return <>annDiff</>;
-  };
+  //   const savingAmount = (id: any) => {
+  //     const mon = tiers[id]?.priceNum?.mon;
+  //     const ann = tiers[id]?.priceNum?.ann;
+  //     const annDiff = 12 * (mon - ann);
+  //     console.log(annDiff)
+  //     return <>annDiff</>;
+  //   };
 
   return (
     <>
       <Navbar />
       <div className="w-full text-center">
-        <h1 className="text-3xl mb-5 ">
-          Ready to get started?
-        </h1>
+        <h1 className="text-3xl mb-5 ">Ready to get started?</h1>
         <p className="text-gray-400 mb-5">
           Find a plan that works best for you:
         </p>
@@ -88,7 +86,11 @@ const Pricing: NextPage = () => {
             <p className="text-xs font-bold bg-green-200 w-16 p-1 ">15% OFF</p>
           </div>
           <div className="w-64 mx-auto flex justify-center mb-6">
-            <span className="mr-3 text-sm font-medium text-gray-900 dark:text-gray-300">
+            <span
+              className={`${
+                checked ? "text-gray-400" : "text-gray-900"
+              } mr-3 text-sm font-medium dark:text-gray-300`}
+            >
               Monthly
             </span>
             <label
@@ -105,20 +107,24 @@ const Pricing: NextPage = () => {
               />
               <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-green-600"></div>
             </label>
-            <span className="ml-3 text-sm font-medium text-gray-900 dark:text-gray-300">
+            <span
+              className={`${
+                checked ? "text-gray-900" : "text-gray-400"
+              } ml-3 text-sm font-medium dark:text-gray-300`}
+            >
               Yearly
             </span>
           </div>
         </div>
-        <div className="flex justify-center text-left flex-col items-center md:items-start md:flex-row ">
+        <div className="flex justify-center text-left flex-col items-center lg:items-start lg:flex-row ">
           {tiers.map((tier) => (
             <div
               key={tier.id}
-              className="border rounded-lg p-4 m-3 shadow w-4/6 sm:w-96 md:w-48 lg:w-64 font-bold"
+              className="border rounded-lg p-4 m-3 shadow w-4/6 sm:w-96 md:w-[32rem] lg:w-64 font-bold"
             >
               <div>{tier.name}</div>
-              <div className="font-normal text-sm md:h-10">{tier.bestFor}</div>
-              <div className="my-4 text-4xl md:text-2xl lg:text-4xl font-light">
+              <div className="font-normal text-sm lg:h-10">{tier.bestFor}</div>
+              <div className="my-4 text-4xl lg:text-4xl font-light">
                 {tier.priceNum
                   ? checked
                     ? `$${tier.priceNum.ann}`
@@ -126,7 +132,7 @@ const Pricing: NextPage = () => {
                   : tier.priceString}
                 {tier.priceNum && <span className="text-xs"> / month</span>}
               </div>
-              <div>{tier.priceNum && checked && <>{() => savingAmount(tier.id)}</>}</div>
+              {/* <div>{tier.priceNum && checked && <>{() => savingAmount(tier.id)}</>}</div> */}
               <button className="p-2 w-full text-green-600 border-2 border-green-600 rounded-lg hover:bg-green-100 active:bg-green-200">
                 {tier.actionText}
               </button>
