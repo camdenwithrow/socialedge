@@ -45,7 +45,7 @@ const Navbar: React.FC = () => {
               <rect y="60" width="100" height="20" rx="8"></rect>
             </svg>
           </button>
-          <div>SocialEdge</div>
+          <Link href="/"><div className="cursor-pointer">SocialEdge</div></Link>
         </div>
         <nav className="hidden md:block">
           <ul className="flex justify-between items-center text-gray-500">
@@ -62,10 +62,10 @@ const Navbar: React.FC = () => {
         </nav>
         <div className="flex items-center">
           <Link href="/login">
-            <a className="mr-4 p-1 border-b border-gray-400 ">Login</a>
+            <a className="mr-4 p-1 border-b border-gray-400 text-gray-500 hover:text-gray-700">Login</a>
           </Link>
           <Link href="/signup">
-            <a className="border p-2 rounded shadow transition hover:scale-105">
+            <a className="border p-2 rounded shadow transition text-gray-500 hover:text-gray-700 hover:scale-105">
               Signup
             </a>
           </Link>

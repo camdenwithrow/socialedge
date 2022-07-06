@@ -199,13 +199,14 @@ const MainSearch: React.FC<MainSearchProps> = (props) => {
     }
   }, [openSearch]);
 
-
-
   return (
     <div
       className={`${!openSearch && "hidden"} absolute z-50 inset-0 bg-white/90`}
     >
-      <div ref={modalRef} className="mx-auto w-full sm:w-[640px] lg:w-[800px]">
+      <div
+        ref={modalRef}
+        className="relative mx-auto w-full sm:w-[640px] lg:w-[800px]"
+      >
         <div className="w-full h-20 bg-white flex items-center">
           <form className="mx-auto w-full px-3 sm:w-[640px] lg:w-[800px]">
             <label
@@ -240,9 +241,10 @@ const MainSearch: React.FC<MainSearchProps> = (props) => {
                   setSearchVal(e.target.value);
                 }}
                 className="block p-4 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-green-500 focus:border-green-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500"
-                placeholder="Search Mockups, Logos..."
+                placeholder="Search Companies, Trends..."
               />
               <button
+                type="button"
                 onClick={closeSearch}
                 className="text-gray-500 absolute bottom-2 right-2 p-2 rounded hover:bg-gray-300"
               >
@@ -251,9 +253,9 @@ const MainSearch: React.FC<MainSearchProps> = (props) => {
             </div>
           </form>
         </div>
-        <div className="mx-auto -mt-6 w-full px-3 sm:w-[640px] lg:w-[800px]">
-          <div className="h-[32rem] px-4 pt-5 bg-white border rounded-lg overflow-y-scroll">
-            <div className="grid grid-cols-12 text-gray-500 text-xs mb-2">
+        <div className="mx-auto -mt-5 w-full px-3 sm:w-[640px] lg:w-[800px]">
+          <div className="h-[32rem] px-4 pt-2 bg-white border rounded-lg overflow-y-scroll">
+            <div className="sticky -top-0.5 pt-3 pb-4 bg-white grid grid-cols-12 text-gray-500 text-xs">
               <div className="col-span-2">SYMBOL</div>
               <div className="col-span-3">COMPANY</div>
               <div className="col-span-3">RELATED TAGS</div>

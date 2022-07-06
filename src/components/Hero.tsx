@@ -12,7 +12,7 @@ const Hero: React.FC<HeroProps> = (props) => {
   const { onClickSearch } = props
 
   return (
-    <div className="m-12 mt-24 grid grid-rows-2 grid-cols-1 lg:grid-cols-3 xl:grid-cols-2">
+    <div className="m-12 mt-36 grid grid-rows-2 grid-cols-1 lg:grid-cols-3 xl:grid-cols-2">
       <div className="mx-auto flex flex-col justify-center items-center text-center w-full lg:col-span-2 xl:col-span-1 lg:items-start lg:text-left sm:w-[575px]">
         <h1 className="text-3xl sm:text-5xl lg:text-6xl sm:leading-tight lg:leading-tight font-semibold mb-8">
           Data to <span className="text-green-600">Jumpstart</span> Your Next Investment
@@ -35,7 +35,7 @@ const Hero: React.FC<HeroProps> = (props) => {
             </svg>
           </div>
           <div className="text-sm text-gray-500">
-            <p className="text-left">Search Companies, Trends...</p>
+            <p className="text-left">Search Companies<span className="sm:hidden">...</span><span className="hidden sm:inline">, Trends...</span></p>
           </div>
           <p className="text-white absolute right-2.5 bottom-3 bg-green-600 font-medium rounded-lg text-sm px-4 py-2 dark:bg-green-600">
             Search
@@ -44,7 +44,7 @@ const Hero: React.FC<HeroProps> = (props) => {
       </div>
       <div className="w-full max-w-[575px] lg:w-[300px] xl:w-[500px] mx-auto flex lg:block">
         {cards.map((card) => (
-          <div key={card.id} className="my-4 first:mr-4 last:ml-4 lg:first:mr-0 lg:last:ml-0 p-4 w-full border rounded-lg ">
+          <div key={card.id} className="my-4 first:mr-4 last:hidden sm:last:block sm:last:ml-4 lg:first:mr-0 lg:last:ml-0 p-4 w-full border rounded-lg ">
             <div>{card.name}</div>
             <p>___/-----</p>
           </div>

@@ -19,7 +19,7 @@ const Home: NextPage = () => {
         <meta name="description" content="Social Edge Data App" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="w-full h-screen">
+      <div className="w-full h-screen overflow-hidden">
         <Navbar />
         <Hero onClickSearch={() => setOpenSearch(true)}/>
         <MainSearch openSearch={openSearch} setOpenSearch={setOpenSearch}/>
